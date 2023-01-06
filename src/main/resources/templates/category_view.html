@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table table-striped">
+<thead>
+<tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="list : ${listCate}">
+    <td th:text="${list.id}"></td>
+    <td th:text="${list.name}"></td>
+    <td>
+        <a th:href="@{'/detailCate/' + ${list.id}}">Detail</a>
+        <a th:href="@{'/deleteCate/' + ${list.id}}">Delete</a>
+    </td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
